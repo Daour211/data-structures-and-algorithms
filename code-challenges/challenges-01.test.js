@@ -123,8 +123,8 @@ const addNumbers = (num, arr, times, callback) => {
   // times = 5;
   for (let i = 0; i < times; i++) {
     
-    let addNum = callback(arr,num)
-    arr.push(addNum);
+    let addNum = callback(arr,num);
+    
     
   }
 
