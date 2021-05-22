@@ -141,7 +141,7 @@ const returnNames = (arr) => {
     array0.push(acc)
     // newArr.push(acc);
     return array0
-  })
+  },' ')
   return array0
 };
 
@@ -155,13 +155,25 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
-  let splitName = str.split()
-  reverseString = x.reduce((acc,val) =>{
+  let splitName = str.split('')
+ 
+  let long= splitName.length -1 
+  
+  let newArr =[];
+
+  for (let i= long ; i >= 0 ; i--){
     
+    newArr.push(splitName[i]) 
+  
+  } 
+
+  let reverseString = newArr.reduce((acc,val) =>{
+    acc = acc + val
    
      return acc
 
-  })
+  },'')
+  return reverseString
  
 };
 
