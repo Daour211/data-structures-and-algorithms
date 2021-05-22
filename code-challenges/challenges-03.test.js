@@ -112,6 +112,7 @@ const notInFirstArray = (forbiddenValues, arr) => {
 //  let newArr=[];
  
 
+
  return arr.filter  (item => !forbiddenValues.includes(item))
   // for (let i = 0; i < forbiddenValues.length; i++) {
   //   if( !arr.includes(item) ){
@@ -119,9 +120,10 @@ const notInFirstArray = (forbiddenValues, arr) => {
   //   } ;
   //   if ( !forbiddenValues.includes(item)){
   // }
+
   
     
-  // })
+ 
 
 
   
