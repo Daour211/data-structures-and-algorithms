@@ -109,22 +109,22 @@ const firstNums = [1, 2, 3];
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
- let newArr=[];
+//  let newArr=[];
  
 
- newArr = forbiddenValues.filter = (item =>{
-  for (let i = 0; i < forbiddenValues.length; i++) {
-    if( !arr.includes(item) ){
-      return item
-    } ;
-    
-  }
+ return arr.filter  (item => !forbiddenValues.includes(item))
+  // for (let i = 0; i < forbiddenValues.length; i++) {
+  //   if( !arr.includes(item) ){
+  //     return item
+  //   } ;
+  //   if ( !forbiddenValues.includes(item)){
+  // }
   
     
-  })
+  // })
 
 
-  return newArr;
+  
   
 };
 
