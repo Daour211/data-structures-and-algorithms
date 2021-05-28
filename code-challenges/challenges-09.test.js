@@ -152,10 +152,10 @@ const characters = [
 ];
 
 const getHouses = (arr) => {
-  let houses = [];
+
   // Solution code here...
   
-  house = arr.map(item=>{
+ let houses = arr.map(item=>{
     return item.house
   })
   return houses;
@@ -171,19 +171,37 @@ This function should take in an array of data and a character name and return a 
 For example:
 hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
+
+describe('Testing challenge 6', () => {
+  test('It should return true for characters that have children', () => {
+    expect(hasChildrenValues(characters, 'Daenarys')).toBeTruthy();
+  });
+
+  test('It should return false to characters who do not have children', () => {
+    expect(hasChildrenValues(characters, 'Sansa')).toBeFalsy();
+  });
+});
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-  let newArr = Object.values(arr); 
-
-  newArr.forEach(val =>{
-    if (val == character) {
-      return true
-    }else{
-      return false
+  // let newArr = Object.values(arr); 
+  
+  // let newArr = arr.forEach(val =>{
+  //   if (val == character) {
+  //     return true
+  //   }else{
+  //     return false
+  //   }
+  // })
+  arr.forEach(val =>{
+    if(val.name !== undefined && val.children !== undefined){
+      return true;
+    }else if (val.name !== undefined && val.children == undefined){
+      return false;
     }
   })
+  
   
 
 };
