@@ -26,9 +26,16 @@ let starWarsPeople = [
 
 const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...
-  let newArr = starWarsArr.map(element => {
-    return element.name
-  });
+  let arr = starWarsArr.sort((a,b) => {
+    if (a.height > b.height){
+         return 1;
+    } else if(a.height < b.height){
+         return -1;
+ 
+    }
+    return arr.name
+ 
+ })
 }
 
 /* ------------------------------------------------------------------------------------------------

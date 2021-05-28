@@ -56,6 +56,18 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // Solution code here...
+  charArray.sort((a,b) =>{
+    if(a.children>b.children)
+    {return 1
+    } else if(a.children<b.children){
+      return -1
+    }else if(a.house >b.house) {
+      return 1
+    }else if(a.house<b.house){
+      return -1
+    }
+  })
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -122,14 +134,10 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-  let arr = [];
+  
   let regex = /\b[A-Z](\w)*/g
-  //  regesx.test(str)
-  str.forEach(item =>{
-    if(regesx.test(item)){
-      arr.push(item)
-    }
-  })
+  let arr = regex.match(str)
+  
     return arr
   
   
