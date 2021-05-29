@@ -10,14 +10,14 @@ E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
   // Solution code here...
-  let newArr = arr.reduce((acc,item) =>{
-    if(acc>item){
+  let newArr = arr.reduce((acc, item) => {
+    if (acc > item) {
 
       return acc
-    }else if(item>acc){
+    } else if (item > acc) {
       return acc = item
     }
-  },0)
+  }, 0)
   return newArr
 };
 
@@ -28,7 +28,8 @@ Write a function named getCourseKeys that takes in the courseInfo object and ret
 
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
-const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
+const courseInfo = {
+  name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
@@ -54,12 +55,12 @@ const checkValues = (obj, value) => {
   for (let i = 0; i < item.length; i++) {
     if (item[i] == value) {
       return true
-    }else{
+    } else {
       return false
     }
-    
+
   }
-    
+
   //}
   // let boonlean = item.map(element =>{
   //   if (element ==  value)
@@ -93,9 +94,9 @@ const updateNumbers = (obj) => {
   let value = Object.values(obj);
   let newArr = [];
   for (let i = 0; i < key.length; i++) {
-    let x =key[i]+ ': '+value[i]
+    let x = key[i] + ': ' + value[i]
     newArr.push(x)
-    
+
   }
   return newArr
 };
@@ -154,8 +155,8 @@ const characters = [
 const getHouses = (arr) => {
 
   // Solution code here...
-  
- let houses = arr.map(item=>{
+
+  let houses = arr.map(item => {
     return item.house
   })
   return houses;
@@ -186,23 +187,20 @@ describe('Testing challenge 6', () => {
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
   // let newArr = Object.values(arr); 
-  
-  // let newArr = arr.forEach(val =>{
-  //   if (val == character) {
-  //     return true
-  //   }else{
-  //     return false
-  //   }
-  // })
-  arr.forEach(val =>{
-    if(val.name !== undefined && val.children !== undefined){
+
+  let newArr = Object.values(arr);
+
+  let valueOfHavingChild = newArr.map(item => {
+    if (character !== undefined && item.children !== undefined) {
+
       return true;
-    }else if (val.name !== undefined && val.children == undefined){
+    } else if (character !== undefined && item.children == undefined) {
       return false;
     }
   })
-  
-  
+
+  return valueOfHavingChild
+
 
 };
 
