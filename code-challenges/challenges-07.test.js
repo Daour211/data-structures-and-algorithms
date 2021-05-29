@@ -26,9 +26,27 @@ let starWarsPeople = [
 
 const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...
-  let newArr = starWarsArr.map(element => {
-    return element.name
+  let arr = starWarsArr.map(item => {
+    return item.height
+  })
+
+  arr.sort((a, b) => {
+    if (a < b) {
+      return 1;
+    } else if (a > b) {
+      return -1
+    }
+  })
+
+  let newArr = arr.map(item => {
+    for (i = 0; i < arr.length; i++) {
+      if (item == starWarsArr[i].height) {
+        return starWarsArr[i].name
+      }
+    }
   });
+  return newArr
+ 
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -141,11 +159,11 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  
+
   let arr = gruffaloCrumble.ingredients
 
   result = arr.map(item => {
-    return item.slice(9,item.length)
+    return item.slice(9, item.length)
   })
   // Solution code here...
   return result;
@@ -162,6 +180,63 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  let newArr= recipe.ingredients
+
+
+// let arr = newtr.map(item =>{
+//   // let a = item.indexOf('Gruffalo');
+//   // console.log(a)
+//   //  console.log(item.length)
+//   // return item.slice(8,item.lenght)
+
+ for(i=0;i<newArr.length;i++){
+   if(i==0){
+     let a = newArr[i].indexOf('G');
+   let x = newArr[i].slice(a,newArr[i].length)
+   result.push(x)
+   }
+   else if(i==1){
+     let a = newArr[i].indexOf('oa');
+   let x = newArr[i].slice(a,newArr[i].length)
+   result.push(x)
+   }else if(i==2){
+     let a = newArr[i].indexOf('b');
+   let x = newArr[i].slice(a,newArr[i].length)
+   result.push(x)
+   }else if(i==3){
+     let a = newArr[i].indexOf('f');
+   let x = newArr[i].slice(a,newArr[i].length)
+   result.push(x)
+   }else if(i==4){
+     let a = newArr[i].indexOf('p');
+   let x = newArr[i].slice(a,newArr[i].length)
+   result.push(x)
+   }else if(i==5){
+     let a = newArr[i].indexOf('ch');
+   let x = newArr[i].slice(a,newArr[i].length)
+   result.push(x)
+   }else if(i==6){
+     let a = newArr[i].indexOf('b');
+   let x = newArr[i].slice(a,newArr[i].length)
+   result.push(x)
+   }else if(i==7){
+     let a = newArr[i].indexOf('b');
+   let x = newArr[i].slice(a,newArr[i].length)
+   result.push(x)
+   }else if(i==8){
+     let a = newArr[i].indexOf('c');
+   let x = newArr[i].slice(a,newArr[i].length)
+   result.push(x)
+   }else if(i==9){
+     let a = newArr[i].indexOf('m');
+   let x = newArr[i].slice(a,newArr[i].length)
+   result.push(x)
+   }else if(i==10){
+     let a = newArr[i].indexOf('f');
+   let x = newArr[i].slice(a,newArr[i].length)
+   result.push(x)
+   }
+ }
   return result;
 };
 
