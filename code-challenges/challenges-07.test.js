@@ -26,6 +26,7 @@ let starWarsPeople = [
 
 const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...
+
   let arr = starWarsArr.map(item => {
     return item.height
   })
@@ -47,6 +48,7 @@ const sortStarWarsCharacters = (starWarsArr) => {
   });
   return newArr
  
+
 }
 
 /* ------------------------------------------------------------------------------------------------
