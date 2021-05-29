@@ -60,13 +60,12 @@ const sortByChildren = (charArray) => {
     if(a.children>b.children)
     {return 1
     } else if(a.children<b.children){
-      return -1
-    }else if(a.house >b.house) {
-      return 1
+      return -1    
     }else if(a.house<b.house){
       return -1
     }
   })
+  return charArray
   
 };
 
@@ -134,13 +133,13 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  let regex= str.match(/\b[A-Z](\w)*/g)
+  // let regex = /\b[A-Z](\w)*/g
+  // let arr = regex.match(str)
   
-  let regex = /\b[A-Z](\w)*/g
-  let arr = regex.match(str)
+  //   return arr
   
-    return arr
-  
-  
+  return regex
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -152,10 +151,9 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 const citiesAtoJ = (arr) => {
   // Solution code here...
   let regex = /^[A-J](\w)*/g
-  let newArr=[]
-   arr.forEach(item =>{
+  let newArr= arr.filter(item =>{
     if(regex.test(item)){
-      newArr.push(item)
+      return item
     }
   })
   return newArr
