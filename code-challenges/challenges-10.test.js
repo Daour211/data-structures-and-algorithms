@@ -10,12 +10,15 @@ Write a function named returnTen, takes in a string and uses split and splice to
 function returnTen(str) {
   // Solution code here...
   let newStr = str.split("")
-  let output ;
-  let x = newStr.length - 10;
-  for (i = 0; i < x; i++) {
-    output = newStr.splice(i, 1)
-  }
-  return newStr
+  
+  let output = newStr.splice(-10, 10);
+  // let output;
+  // let x = newStr.length - 10;
+  // for (i = 0; i < x; i++) {
+  //   output = newStr.splice(i, 1)
+  // }
+  // return newStr
+  return output
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -166,23 +169,23 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  return arr[2].items[1].quantity;
+  // let newVal = 0;
+  // for (let i = 0; i < arr.length; i++) {
+  //   let x = arr[i].store
+  //   let y = arr[i].items
 
-  let newVal = 0;
-  for (let i = 0; i < arr.length; i++) {
-    let x = arr[i].store
-    let y = arr[i].items
+  //   if (x = 'Pet store') {
+  //     for (j = 0; j < y.length; j++) {
+  //       if (y[j].quantity > newVal) {
+  //         newVal = y[j].quantity
+  //       }
+  //     }
 
-    if (x = 'Pet store') {
-      for (j = 0; j < y.length; j++) {
-        if (y[j].quantity > newVal) {
-          newVal = y[j].quantity
-        }
-      }
+  //   }
 
-    }
-
-  }
-  return newVal
+  // }
+  // return newVal
 };
 
 /* ------------------------------------------------------------------------------------------------
