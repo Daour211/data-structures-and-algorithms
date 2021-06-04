@@ -21,12 +21,12 @@ Becomes:
 function transformToLis(obj) {
   // Solution code here...
   let objKeys = Object.keys(obj)
-  let objValues= Object.values(obj)
+  let objValues = Object.values(obj)
   let newArr = [];
 
   for (let i = 0; i < objKeys.length; i++) {
     newArr.push(`<li>${objKeys[i]}: ${objValues[i]}</li>`)
-    
+
   }
   return newArr
 }
@@ -90,22 +90,22 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
   let arr = input.map(item => {
-    item.map(value => {
-      if (value % 5 === 0) {
-        return value
-        // console.log(value)
-      }
-
-    })
-    return item
-  });
-    let newArr = arr.map(item => {
-    item.filter(val => {
-     return  2**val
-      
-    })
-    return  item
-  })
+    return item.filter(value => {
+       if (value % 5 == 0) {
+         return value
+         // console.log(value)
+       }
+ 
+     })
+   
+   });
+  //  console.log(arr)
+   let newArr = arr.map(item => {
+    return item.map(val => {
+       return 2 ** val
+ 
+     })
+   })
   return newArr
 };
 
@@ -173,16 +173,22 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
-  let str;
-  let arr = data.map(val =>{
-    if(val.gender == 'female' || val.gender == 'male'){
-      str = val.name
-      return str
+  let finalArr = '';
+  let arr = data.map(item => {
+    if (item.gender == 'female' || item.gender == 'male') {
+      return item.name
+    }
+
+  })
+
+  let newArr = arr.filter(val => {
+    if (val != undefined) {
+      return val
     }
   })
-let newArr = arr.join("and ")
+  finalArr = newArr.join(" and ")
 
-return newArr
+  return finalArr
 
 };
 
@@ -194,21 +200,22 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
-  let arr = data.map(item =>{
-    return item.name;
-  });
-  let shortStr='';
+  let str = '';
+  let long = 0;
+  console.log(str.length);
+  let newArr = arr.filter(val => {
+    console.log(val.length);
+    if (val.length < long) {
+      str = val
 
-  for(let i=0;i<arr.length;i++){
-    
-    if(i=0){
-      shortStr = arr[i]
-    }else if(arr[i].length < shortStr.length){
-      shortStr = arr[i]
+      return str
     }
-  }
+    long = val.length
+    console.log(long);
+  })
 
-  return shortStr
+
+  return newArr
 
 };
 
